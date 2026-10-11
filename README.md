@@ -1,5 +1,7 @@
 # test-manager-library-3413974-docs
 
+Estado local actualizado: [entrega verificada](implementation-laravel-react/FINAL-REPORT.md), [matriz de cumplimiento](implementation-laravel-react/COMPLIANCE-MATRIX.md) y [arquitectura implementada](implementation-laravel-react/ACTUAL-ARCHITECTURE.md). Las instrucciones originales siguientes describen el reto inicial y se conservan como fuente histórica.
+
 > **Prueba técnica · Ficha ADSO 3413974**
 > Horario: de **9:15 a. m. a 3:00 p. m.** (15:00). Después, **feria de presentación** de cada proyecto.
 

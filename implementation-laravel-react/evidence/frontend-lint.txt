@@ -1,0 +1,6 @@
+
+> workspace@0.0.0 lint
+> oxlint
+
+Found 0 warnings and 0 errors.
+Finished in 88ms on 22 files with 104 rules using 12 threads.

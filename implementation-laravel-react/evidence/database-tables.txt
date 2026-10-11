@@ -1,0 +1,16 @@
+library|book
+library|category
+library|loan
+library|loan_item
+library|member
+library|user
+public|cache
+public|cache_locks
+public|failed_jobs
+public|job_batches
+public|jobs
+public|migrations
+public|password_reset_tokens
+public|sessions
+public|users
+Etc/UTC

@@ -1,5 +1,7 @@
 # Arquitectura — Manager Library (Laravel + React)
 
+Este documento conserva el diseño inicial propuesto. La descripción del código realmente implementado está en [ACTUAL-ARCHITECTURE.md](ACTUAL-ARCHITECTURE.md) y su verificación en [FINAL-REPORT.md](FINAL-REPORT.md).
+
 ## Fuentes y objetivo
 Adaptación de `spec-python/` y `spec-.net/` del repositorio oficial. Se conservan las reglas, historias, contrato HTTP y modelo de datos. Arquitectura propuesta: puertos y adaptadores; las dependencias apuntan hacia el dominio.
 

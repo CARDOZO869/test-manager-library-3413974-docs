@@ -1,6 +1,6 @@
 # Matriz de trazabilidad — Manager Library
 
-Fuente de verdad: `spec-python/spec.md`, `api-contract.md`, `data-model.md`, `tasks.md`; contrastar con `spec-.net/`. Estado de implementación: pendiente.
+Fuente de verdad: `spec-python/spec.md`, `api-contract.md`, `data-model.md`, `tasks.md`; contrastar con `spec-.net/`. Este archivo conserva el mapa de diseño inicial. El estado auditado y las pruebas finales están en [COMPLIANCE-MATRIX.md](COMPLIANCE-MATRIX.md).
 
 ## Historias de usuario
 | HU | Función | Laravel | React | Evidencia |

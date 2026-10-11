@@ -1,0 +1,38 @@
+
+> workspace@0.0.0 test
+> node --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: official login response creates an eight-hour session
+ok 1 - official login response creates an eight-hour session
+  ---
+  duration_ms: 1.982572
+  type: 'test'
+  ...
+# Subtest: an explicit data envelope is supported without inventing fields
+ok 2 - an explicit data envelope is supported without inventing fields
+  ---
+  duration_ms: 0.32249
+  type: 'test'
+  ...
+# Subtest: malformed responses, unknown roles and missing expiry are rejected
+ok 3 - malformed responses, unknown roles and missing expiry are rejected
+  ---
+  duration_ms: 0.622984
+  type: 'test'
+  ...
+# Subtest: expired and incomplete persisted sessions are rejected and logout clears only session keys
+ok 4 - expired and incomplete persisted sessions are rejected and logout clears only session keys
+  ---
+  duration_ms: 1.25752
+  type: 'test'
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 115.991185

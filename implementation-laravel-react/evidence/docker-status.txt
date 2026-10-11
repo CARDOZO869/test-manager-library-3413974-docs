@@ -1,0 +1,4 @@
+NAME                                       IMAGE                                                                     COMMAND                  SERVICE   CREATED          STATUS                    PORTS
+test-manager-library-3413974-infra-api-1   sha256:0c6f4162b61310a2340d75313b280875ab0b15d1182cd6c46786d1aa5678e785   "docker-php-entrypoi…"   api       20 minutes ago   Up 25 seconds (healthy)   0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp
+test-manager-library-3413974-infra-app-1   node:22-alpine                                                            "docker-entrypoint.s…"   app       37 minutes ago   Up 37 minutes             0.0.0.0:5173->5173/tcp, [::]:5173->5173/tcp
+test-manager-library-3413974-infra-db-1    postgres:16                                                               "docker-entrypoint.s…"   db        6 hours ago      Up 2 hours (healthy)      5432/tcp

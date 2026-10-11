@@ -1,0 +1,11 @@
+{
+  "database": "manager_library_verification",
+  "books": 40,
+  "members": 10,
+  "loans": 15,
+  "overdueLines": 3,
+  "overdueReadyAt": "2026-10-25T01:19:18.000Z",
+  "validation_clock": "2026-10-26T12:00:00Z",
+  "transport": "All demo records created through HTTP API",
+  "scope": "Three overdue lines owned by the seed run; other verification fixtures remain in the isolated database"
+}

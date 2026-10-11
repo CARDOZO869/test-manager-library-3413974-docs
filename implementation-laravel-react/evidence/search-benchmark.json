@@ -1,0 +1,12 @@
+{
+  "database": "manager_library_verification",
+  "active_books": 5008,
+  "warmup_requests": 3,
+  "samples": 20,
+  "median_ms": 117.52,
+  "p95_ms": 130.27,
+  "max_ms": 156,
+  "all_below_300_ms": true,
+  "fixture_source": "isolated SQL fixture; demo seeder tested separately over HTTP",
+  "scope": "Local warm HTTP search; no cold-start or production guarantee"
+}

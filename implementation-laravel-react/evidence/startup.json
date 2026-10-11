@@ -1,0 +1,9 @@
+{
+  "exit_code": 0,
+  "scope": "Existing configured installation, not a fresh clone",
+  "migrations": "Nothing to migrate",
+  "database": "existing volume retained",
+  "admin": "already exists; no changes made",
+  "build": "success (cached)",
+  "command": ".\\Start-Library.ps1"
+}

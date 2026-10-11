@@ -1,0 +1,157 @@
+
+   PASS  Tests\Unit\Application\AuthenticationTest
+  ✓ login returns eight hour token metadata                              0.07s
+  ✓ login rejects unknown username without disclosure
+  ✓ login rejects wrong password with same error
+  ✓ admin creates librarian with hashed password                         0.01s
+  ✓ non admin cannot create librarian
+  ✓ api cannot create admin
+  ✓ duplicate username is rejected case insensitively
+  ✓ created user has no plain password
+
+   PASS  Tests\Unit\Application\BookCatalogTest
+  ✓ admin creates book with all copies available                         0.06s
+  ✓ duplicate active isbn rejected
+  ✓ librarian cannot create book
+  ✓ search filters and paginates active books
+  ✓ search rejects page size above fifty
+  ✓ update adjusts total and category
+  ✓ delete hides book from search and get
+  ✓ delete rejects open loans
+  ✓ cover key can be added and removed
+  ✓ empty cover key is rejected
+
+   PASS  Tests\Unit\Application\BookCoverTest
+  ✓ png upload stores opaque key                                         0.02s
+  ✓ unsupported file is rejected
+  ✓ more than two megabytes is rejected
+  ✓ librarian cannot upload
+  ✓ missing book is rejected
+  ✓ empty file is rejected
+  ✓ removal clears reference and binary
+
+   PASS  Tests\Unit\Application\LendBooksTest
+  ✓ valid loan decrements stock and freezes snapshot                     0.04s
+  ✓ empty loan is rejected
+  ✓ duplicate book rejected without stock change
+  ✓ more than three books rejected
+  ✓ member with overdue items is blocked
+  ✓ member cannot exceed three outstanding books
+  ✓ out of stock rejected without writing loan
+  ✓ missing book rejected without stock change
+  ✓ missing member is rejected
+  ✓ loan due date is fourteen days
+
+   PASS  Tests\Unit\Application\MostBorrowedReportTest
+  ✓ counts borrowed items and orders by count                            0.02s
+  ✓ date range is inclusive on both calendar dates
+  ✓ historical title and category are separate groups
+  ✓ tie breaks by title
+  ✓ empty range returns empty rows
+  ✓ reversed dates are rejected
+  ✓ invalid calendar date is rejected
+  ✓ librarian cannot view report
+  ✓ report never contains member or librarian fields
+
+   PASS  Tests\Unit\Application\ReturnsTest
+  ✓ return marks item and restocks exactly one copy                      0.04s
+  ✓ return twice is rejected without extra stock
+  ✓ unknown loan is rejected
+  ✓ unknown item is rejected
+  ✓ missing book is rejected
+  ✓ overdue excludes due today and sorts oldest first
+  ✓ overdue empty result
+
+   PASS  Tests\Unit\Domain\BookTest
+  ✓ new book starts with all copies available
+  ✓ withdraw and restock preserve bounds
+  ✓ cannot withdraw beyond available
+  ✓ cannot restock above total
+  ✓ changing total adjusts available by same difference
+  ✓ cannot reduce total below borrowed copies
+  ✓ cannot soft delete with open loans
+  ✓ soft delete marks book inactive
+  ✓ deleted book cannot be withdrawn
+  ✓ invalid initial stock is rejected
+  ✓ nonpositive quantity is rejected
+
+   PASS  Tests\Unit\Domain\LoanTest
+  ✓ loan requires at least one item before registration
+  ✓ loan accepts one to three items
+  ✓ loan rejects fourth item
+  ✓ loan rejects duplicate book
+  ✓ due date is fourteen days after loan
+  ✓ status is open before due date
+  ✓ status is overdue after due date
+  ✓ status is closed after all items are returned
+  ✓ item cannot be returned twice
+  ✓ snapshot values remain unchanged
+
+   PASS  Tests\Unit\Domain\MemberUserTest
+  ✓ member trims name and document                                       0.01s
+  ✓ member requires name
+  ✓ member rejects overlong document
+  ✓ user normalizes username
+  ✓ user accepts admin role for bootstrap
+  ✓ user rejects invalid role
+  ✓ librarian factory never creates admin
+  ✓ user requires password hash
+
+   PASS  Tests\Unit\Domain\ValueObjectsTest
+  ✓ isbn accepts exactly thirteen digits                                 0.01s
+  ✓ isbn rejects invalid characters and lengths
+  ✓ quantity must be positive                                            0.01s
+  ✓ date range accepts equal boundaries                                  0.01s
+  ✓ date range rejects end before start
+  ✓ date range contains only instants within bounds
+
+   PASS  Tests\Unit\ExampleTest
+  ✓ that true is true                                                    0.01s
+
+   PASS  Tests\Unit\Infrastructure\SecurityTest
+  ✓ token has eight hour lifetime                                        0.02s
+  ✓ invalid signature is rejected
+  ✓ secret must be long enough
+  ✓ invalid ttl is rejected
+
+   PASS  Tests\Feature\ConcurrentLendingTest
+  ✓ two processes compete for last copy                                  1.11s
+  ✓ two http requests receive created and conflict                       0.88s
+
+   PASS  Tests\Feature\ExampleTest
+  ✓ the application returns a successful response                        0.31s
+
+   PASS  Tests\Feature\LibraryContractTest
+  ✓ login matches contract and never exposes password                    1.27s
+  ✓ all private routes reject missing token                              1.84s
+  ✓ role is checked before resource or input                             0.53s
+  ✓ book member loan return and report flow                              0.70s
+  ✓ validation and reversed dates have safe errors                       0.52s
+  ✓ password adapter uses argon2id and accepts existing bcrypt           1.37s
+  ✓ cover upload read remove and size validation                         0.92s
+  ✓ schema has six tables no defaults and required checks                0.52s
+  ✓ duplicate user and member have official conflicts                    0.72s
+  ✓ member limit and overdue have official errors                        0.61s
+  ✓ engine rejects invalid total and role                                0.65s
+
+   PASS  Tests\Feature\LibraryHttpWiringTest
+  ✓ application ports are connected to real adapters                     0.19s
+  ✓ health endpoint is public                                            0.12s
+
+   PASS  Tests\Feature\PostgresLoanRepositoryTest
+  ✓ lending and return are atomic and return only once                   0.15s
+  ✓ out of stock rolls back loan                                         0.09s
+  ✓ overdue query uses snapshot and member name                          0.12s
+
+   PASS  Tests\Feature\PostgresRepositoriesTest
+  ✓ book round trip search update and soft delete                        0.11s
+  ✓ member round trip                                                    0.09s
+  ✓ user round trip and normalization                                    0.08s
+
+   PASS  Tests\Architecture\ArchitectureTest
+  ✓ domain does not depend on application or infrastructure              0.16s
+  ✓ application does not depend on infrastructure                        0.25s
+  ✓ infrastructure is instantiated only in composition                   0.68s
+
+  Tests:    116 passed (761 assertions)
+  Duration: 14.68s
